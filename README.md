@@ -25,7 +25,7 @@ SFUD is an open source serial SPI Flash universal driver library. Since there ar
 
 # 2. How to use SFUD
 
-2.1 Flash supported
+## 2.1 Flash supported
 
 The following table shows all the Flashes that have been tested on the Demo platform on the real machine. The Flash that does not support the SFDP standard has been defined in the Flash parameter information table.
 
