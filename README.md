@@ -29,7 +29,7 @@ SFUD is an open source serial SPI Flash universal driver library. Since there ar
 
 The following table shows all the Flashes that have been tested on the Demo platform on the real machine. The Flash that does not support the SFDP standard has been defined in the Flash parameter information table.
 
-|  Model  | Manufacturer  | Capacity | Maximum Speed | SFDP Standard | QSPI Mode | Comment |
-| :------------------------------------: | :-----: | :---: | ------------- | ------------- | ------------- | ------------- |
+|  Model  | Manufacturer | Capacity | Maximum Speed | SFDP Standard | QSPI Mode | Comment |
+| :-----: | :----------: | :------: | :-----------: | ------------- | --------- | :------ |
 | [W25Q64FV](https://www.winbond.com/resource-files/w25q64fv%20revs%2007182017.pdf)  | Winbond | 64Mb  | 104MHz | Content Cell  | Content Cell  | Content Cell  |
 | [W25Q128FV](https://www.winbond.com/resource-files/w25q128fv%20rev.m%2005132016%20kms.pdf) | Winbond | 128Mb | 104MHz | Content Cell  | Content Cell  | Content Cell  |
