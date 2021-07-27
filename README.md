@@ -7,20 +7,18 @@ SFUD is an open source serial SPI Flash universal driver library. Since there ar
 
 - Main features: support SPI/QSPI interface, object-oriented (support multiple Flash objects at the same time), flexible tailoring, strong scalability, support for 4-byte addresses
 
-- Resource occupation
-Standard occupation: RAM: 0.2KB ROM: 5.5KB
-Minimum occupation: RAM: 0.1KB ROM: 3.6KB
+- Resource useage
+  - Standard occupation: RAM: 0.2KB ROM: 5.5KB
+  - Minimum occupation: RAM: 0.1KB ROM: 3.6KB
 
 - Design ideas:
-What is SFDP: It is the parameter table standard of serial Flash function formulated by JEDEC (Solid State Technology Association), the latest version V1.6B (https://www.jedec.org/standards-documents/docs/jesd216b). The standard stipulates that there will be a parameter table in each Flash, which stores Flash specification parameters such as Flash capacity, write granularity, erase command, and address mode. At present, except for some manufacturers’ older Flash models that do not support this standard, most of the other new factory’s Flash already support the SFDP standard. Therefore, the library will first read the SFDP table parameters during initialization.
+  - With SFDP support: It is the parameter table standard of serial Flash function formulated by JEDEC (Solid State Technology Association), the latest version V1.6B (https://www.jedec.org/standards-documents/docs/jesd216b). The standard stipulates that there will be a parameter table in each Flash, which stores Flash specification parameters such as Flash capacity, write granularity, erase command, and address mode. At present, except for some manufacturers’ older Flash models that do not support this standard, most of the other new factory’s Flash already support the SFDP standard. Therefore, the library will first read the SFDP table parameters during initialization.
 
-What to do if SFDP is not supported:
-- If the Flash does not support the SFDP standard, SFUD will query the Flash parameter information table provided in the configuration file (/sfud/inc/sfud_flash_def.h) to see if the Flash is supported.
-- If it is not supported, you can add the parameter information of the Flash in the configuration file (for details on the adding method, see 2.5 Adding Flash that the library does not currently support). After obtaining the specifications and parameters of the Flash, all operations on the Flash can be realized.
+  - Without SFDP support: If the Flash does not support the SFDP standard, SFUD will query the Flash parameter information table provided in the configuration file (/sfud/inc/sfud_flash_def.h) to see if the Flash is supported. If it is not supported, you can add the parameter information of the Flash in the configuration file (for details on the adding method, see 2.5 Adding Flash that the library does not currently support). After obtaining the specifications and parameters of the Flash, all operations on the Flash can be realized.
 
 # 1. Why choose SFUD
 
-- Avoid project risks caused by Flash out of stock, Flash discontinuation or product expansion;
-- More and more projects store firmware in serial Flash, such as: ESP8266 firmware, motherboard BIOS and firmware in other common electronic products, etc. However, various Flash specifications and commands are not uniform. Using SFUD can avoid the problem of not being able to adapt to different types of Flash hardware platforms based on the same functional software platform, and improve the reusability of the software;
-- Simplify the software process and reduce the difficulty of development. Now only need to configure SPI communication, you can start playing serial Flash freely;
+- Avoid project risks caused by Flash out of stock, Flash discontinuation or product expansion
+- More and more projects store firmware in serial Flash, such as: ESP8266 firmware, motherboard BIOS and firmware in other common electronic products, etc. However, various Flash specifications and commands are not uniform. Using SFUD can avoid the problem of not being able to adapt to different types of Flash hardware platforms based on the same functional software platform, and improve the reusability of the software
+- Simplify the software process and reduce the difficulty of development. Now only need to configure SPI communication, you can start playing serial Flash freely
 - Can be used to make Flash programmer/writer
