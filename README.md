@@ -22,3 +22,14 @@ SFUD is an open source serial SPI Flash universal driver library. Since there ar
 - More and more projects store firmware in serial Flash, such as: ESP8266 firmware, motherboard BIOS and firmware in other common electronic products, etc. However, various Flash specifications and commands are not uniform. Using SFUD can avoid the problem of not being able to adapt to different types of Flash hardware platforms based on the same functional software platform, and improve the reusability of the software
 - Simplify the software process and reduce the difficulty of development. Now only need to configure SPI communication, you can start playing serial Flash freely
 - Can be used to make Flash programmer/writer
+
+# 2. How to use SFUD
+
+2.1 Flash supported
+
+The following table shows all the Flashes that have been tested on the Demo platform on the real machine. The Flash that does not support the SFDP standard has been defined in the Flash parameter information table.
+
+|  Model  | Manufacturer  | Capacity | Maximum Speed | SFDP Standard | QSPI Mode | Comment |
+| :------------------------------------: | :-----: | :---: | ------------- | ------------- | ------------- | ------------- |
+| [W25Q64FV](https://www.winbond.com/resource-files/w25q64fv%20revs%2007182017.pdf)  | Winbond | 64Mb  | 104MHz | Content Cell  | Content Cell  | Content Cell  |
+| [W25Q128FV](https://www.winbond.com/resource-files/w25q128fv%20rev.m%2005132016%20kms.pdf) | Winbond | 128Mb | 104MHz | Content Cell  | Content Cell  | Content Cell  |
